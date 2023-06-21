@@ -6,7 +6,16 @@
 
 Console.WriteLine("Введите целое число: ");
 int num = int.Parse(Console.ReadLine());
-
-
-
-Console.WriteLine($"Третья цифра числа: {result}");
+if (num >=100)
+{   
+   Console.WriteLine($"Третья цифра числа с конца : {num/100 %10}");
+   int result = 0;
+   while(num>=100)
+   {
+    result = num%10;
+    num /=10;
+   }
+   Console.WriteLine($"Третья цифра числа с начала : {result}");
+}
+else
+    Console.WriteLine("Третьей цифры нет");
