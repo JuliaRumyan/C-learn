@@ -5,6 +5,6 @@
 // Решение 10  задачи должно быть выполнено без использования свойств строк
 
 Console.WriteLine("Введите трехзначное число: ");
-int num = int.Parse(Console.ReadLine());
+int num = int.Parse(Console.ReadLine()!);
 int result = num/10 %10;
 Console.WriteLine($"Вторая цифра числа: {result}");
