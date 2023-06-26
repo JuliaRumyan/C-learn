@@ -5,7 +5,7 @@
 // Решение  13 задачи должно быть выполнено без использования свойств строк
 
 Console.WriteLine("Введите целое число: ");
-int num = int.Parse(Console.ReadLine());
+int num = int.Parse(Console.ReadLine()!);
 if (num >=100)
 {   
    Console.WriteLine($"Третья цифра числа с конца : {num/100 %10}");
