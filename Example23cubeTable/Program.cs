@@ -20,6 +20,7 @@ for (int i = 1; i <= num; i++)
         Console.Write(",");
     else
         Console.Write(" ");
+
 }
 
 
