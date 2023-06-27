@@ -9,6 +9,7 @@ int InputNum(string message)
     Console.Write(message);
     return int.Parse(Console.ReadLine()!);
 }
+
 int ReverseNum(int number)
 {
     int reversedNum = 0;
@@ -19,11 +20,16 @@ int ReverseNum(int number)
     }
     return reversedNum;
 }
+
 bool Palindrom(int num,int rev)
 {
     return num == rev;
 }
+
 int num = InputNum("Введите пятизначное число: ");
-int rev = ReverseNum(num);
-bool res = Palindrom(num,rev);
-Console.WriteLine(res);
+
+if (Palindrom(num,ReverseNum(num)))
+    Console.WriteLine("да");
+else Console.WriteLine("нет");
+
+
