@@ -2,16 +2,16 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
-int InputNum(string message)
+int InputNum(string message) // создаем функцию для ввода
 {
-    Console.WriteLine(message);
-    int num = int.Parse(Console.ReadLine()!);
-    return num;
+    Console.WriteLine(message); // выводим приглашение ко вводу
+    int num = int.Parse(Console.ReadLine()!); // приводим к числу введенное значение
+    return num; // возвращаем результат
 }
 
 int num1 = InputNum("Введите целое число A");
 int num2 = InputNum("Введите степень числа А");
 
-Console.Write($"Число А в степени В: {Math.Pow(num1, num2)}");
+Console.Write($"Число А в степени : {Math.Pow(num1, num2)}");
 
     
