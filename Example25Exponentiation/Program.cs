@@ -10,7 +10,7 @@ int InputNum(string message)
 }
 
 int num1 = InputNum("Введите целое число A");
-int num2 = InputNum("Введите целое число B");
+int num2 = InputNum("Введите степень числа А");
 
 Console.Write($"Число А в степени В: {Math.Pow(num1, num2)}");
 
