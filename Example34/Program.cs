@@ -8,13 +8,14 @@ int InputNum(string message)
     return int.Parse(Console.ReadLine()!); // приводим к числу и возвращаем результат
 }
 
-int[] CreateArray(int Length, int minValue, int maxValue) // метод для получения случайных значений массива
+int[] CreateArray(int length, int minValue, int maxValue) // метод для получения случайных значений массива
 {
-    int[] array = new int[Length]; //Объявляем массив
+    int[] array = new int[length]; //Объявляем массив
     Random rnd = new Random(); // создание экземпляра класса Random
-    for (int i = 0; i < Length; i++)
+    for (int i = 0; i < length; i++)
     {
-        array[i] = rnd.Next(minValue, maxValue + 1); // заполнение случайными числами из диапазона, +1 так как последнее значение не включается [)
+        // заполнение случайными числами из диапазона, ++ (или +1) так как последнее значение не включается [)
+        array[i] = rnd.Next(minValue, maxValue ++); 
     }
     return array;
 }
@@ -25,10 +26,9 @@ void PrintArrayray(int[] array)
     {
         Console.Write($"{array[i]}, "); // вывод значения массива
     }
-    Console.Write($"{array[array.Length - 1]}"); // вывод значения массива без запятой
-    Console.Write("]"); // вывод скобки массива
+    Console.Write($"{array[array.Length - 1]}]");
 }
-int NumofEvenNumbers(int[] array) // задаем функцию для подсчета четных элементов массива
+int NumOfEvenNumbers(int[] array) // задаем функцию для подсчета четных элементов массива
 {
     int sum = 0;
     for (int i = 0; i < array.Length; i++)
@@ -36,12 +36,12 @@ int NumofEvenNumbers(int[] array) // задаем функцию для подс
             sum++;
     return sum;
 }
-int Length = InputNum("Введите размер массива: ");
+int length = InputNum("Введите размер массива: ");
 int minValue = 100;
 int maxValue = 999;
-int[] array = CreateArray(Length, minValue, maxValue); //заполнение массива случайными трехзначными числами в диапазоне
+int[] array = CreateArray(length, minValue, maxValue); //заполнение массива случайными трехзначными числами в диапазоне
 PrintArrayray(array); //вывод массива
-int sum = NumofEvenNumbers(array);
+int sum = NumOfEvenNumbers(array);
 Console.WriteLine($" Количество четных чисел в массиве равно {sum}");
 
 
