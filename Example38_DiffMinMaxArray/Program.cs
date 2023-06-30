@@ -1,22 +1,25 @@
 ﻿// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-// [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
- int InputNum(string message)
+// [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76 a[i] = Convert.ToDouble(Console.ReadLine());
+ 
+int InputNum(string message)
 {
     Console.Write(message); //выводим приглашение ко вводу
     return int.Parse(Console.ReadLine()!); // приводим к числу и возвращаем результат
 }
 
-double[] CreateArray(int length, int minValue, int maxValue) // метод получения случайных значений массива - вещественных чисел
+double[] CreateArray(int length) // метод создания массива веществ. чисел
 {
-    double[] array = new double[length]; //Объявляем массив
+    return new double[length];
+}   
+    
+void FillArray(double[] array) // заполняем массив
+{
     Random rnd = new Random(); // создание экземпляра класса Random
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         // заполнение случайными числами из диапазона, 
-         array[i] = rnd.Next(minValue, maxValue ++)/100.0;   
-        // array[i]= InputNum($"Введите {i} элемент массива");      
+         array[i] = rnd.Next(-15,15);  
     }
-    return array;
 }
 void PrintArrayray(double[] array)
 {
@@ -48,10 +51,8 @@ double DiffMaxMin(double min, double max) // задаем функцию для 
     return max  -min;
 }
 int length = InputNum("Введите размер массива: ");
-int minValue = InputNum("Введите минимальное значение элемента массива: ")*100;
-int maxValue = InputNum("Введите максимальное значение элемента массива: ")*100;
-double[] array = CreateArray(length, minValue, maxValue); //заполнение массива случайными вещественными числами в диапазоне
-
+double[] array = CreateArray(length); //заполнение массива случайными вещественными числами в диапазоне
+FillArray(array);
 PrintArrayray(array); //вывод массива
 
 double min = MinElement(array);
