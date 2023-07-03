@@ -2,8 +2,8 @@
 // 0, 7, 8, -2, -2 -> 2
 // 1, -7, 567, 89, 223-> 
 
-Console.Write("Введите несколько чисел через пробел: ");
-int[] arr = Array.ConvertAll(Console.ReadLine()!.Split(), int.Parse); // Конвертация введенных с клавиатуры чисел в массив 
+Console.Write("Введите несколько целых чисел через пробел: ");
+int[] arr = Array.ConvertAll(Console.ReadLine()!.Split(), int.Parse); // Конвертация введенных с клавиатуры чисел в массив int чисел
 int number = 0;
 for (int i = 0; i < arr.Length; i++)
 {
