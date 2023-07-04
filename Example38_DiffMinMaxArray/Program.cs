@@ -18,7 +18,7 @@ void FillArray(double[] array) // заполняем массив
     for (int i = 0; i < array.Length; i++)
     {
         // заполнение случайными числами из диапазона, 
-         array[i] = rnd.Next(-15,15);  
+         array[i] = rnd.Next(-1500,1500)/100.0;  
     }
 }
 void PrintArrayray(double[] array)
@@ -28,7 +28,7 @@ void PrintArrayray(double[] array)
     {
         Console.Write($"{array[i]}, "); // вывод значения массива
     }
-    Console.Write($"{array[array.Length - 1]}]\n");
+    Console.Write($"{array[array.Length - 1]}]\n"); // \n - это переход на новую строку 
 }
 double MaxElement(double[] array) // задаем функцию для нахождения максимального элемента массива 
 {
