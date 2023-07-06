@@ -33,7 +33,7 @@ void PrintArrayray(double[] array)
 double MaxElement(double[] array) // задаем функцию для нахождения максимального элемента массива 
 {
     double max = array[0];  
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 1; i < array.Length; i++)
         if (array[i] > max)
             max = array[i];
     return max;
@@ -41,7 +41,7 @@ double MaxElement(double[] array) // задаем функцию для нахо
 double MinElement(double[] array) // задаем функцию для нахождения минимального элемента массива 
 {
     double min = array[0];  
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 1; i < array.Length; i++)
         if (array[i] < min)
             min = array[i];
     return min;
