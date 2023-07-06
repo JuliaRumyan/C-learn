@@ -18,7 +18,7 @@ void Fill2DArray(int[,] array, int min, int max)
     Random rnd = new Random();
     for (int i = 0; i < array.GetLength(0); i++)
         for (int j = 0; j < array.GetLength(1); j++)
-             array[i, j] = i*10+j; //rnd.Next(min, max + 1);
+             array[i, j] = rnd.Next(min, max + 1);
 }
 void Print2DArray(int[,] array)
 {
