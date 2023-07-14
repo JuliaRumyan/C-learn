@@ -27,23 +27,23 @@ void Print2DArray(int[,] array)
     }
 }
 
-void DescendingOrder(int[,] array)
+void DescendingOrder(int[,] array) // функция для упорядочивания элементов строки массива по убыванию (пузырьковая сортировка)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++) // проходим по строкам
 
-        for (int j = 0; j < (array.GetLength(1) - 1); j++)
+        for (int j = 0; j < (array.GetLength(1) - 1); j++) // проходим по столбцам
         
             if (array[i, j] < array[i, j + 1])
             {
-                int temp = array[i, j + 1];
+                int temp = array[i, j + 1]; // меняем элементы местами с помощью временной переменной
                 array[i, j + 1] = array[i, j];
                 array[i, j] = temp;
-                DescendingOrder(array);
+                DescendingOrder(array); //рекурсия
             }
 }
 
-int[,] myArray = new int[5, 4];
-Fill2DArray(myArray, 1, 9);
+int[,] myArray = new int[5, 4]; // 5 строк, 4 столбца
+Fill2DArray(myArray, 1, 9); // задали сразу минимальное и макс значение 
 Print2DArray(myArray);
 Console.WriteLine("Отсортированный массив");
 DescendingOrder(myArray);
