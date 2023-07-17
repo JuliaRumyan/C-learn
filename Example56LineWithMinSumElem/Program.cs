@@ -26,17 +26,24 @@ void Print2DArray(int[,] array)
 
 void LineWithMinSumm(int[,] array)
 {
+    int lineNumber = 0;
+    int minSumLine = Int32.MaxValue;
     for (int i = 0; i < array.GetLength(0); i++)
     {
         int sumLine = 0;
         for (int j = 0; j < array.GetLength(1); j++)
-            sumLine += array[i, j]; 
-        Console.Write($"Сумма по строке: {sumLine}\n");
+            sumLine += array[i, j];
+        if (minSumLine > sumLine)
+        {
+            minSumLine = sumLine;
+            lineNumber = i;
+        }
     }
+    Console.WriteLine($"Строка  {lineNumber + 1} с минимальной суммой элементов {minSumLine}");
 }
 
 int[,] myArray = new int[4, 5];
 Fill2DArray(myArray, 0, 10);
 Print2DArray(myArray);
 Console.WriteLine();
-LineWithMinSumm (myArray);
+LineWithMinSumm(myArray);
