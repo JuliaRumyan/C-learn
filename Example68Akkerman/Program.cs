@@ -11,14 +11,11 @@ int Inputnum (string message)
 
 int Ackerman(int num1, int num2) // функция Аккермана ack(n, m)
 {if (num1 == 0) return num2 +1; 
-//    если n = 0
-//      вернуть m + 1
+//    если n = 0     вернуть m + 1
 if (num2 ==0) return Ackerman(num1 -1,1);
-//    иначе, если m = 0
-//      вернуть ack (n - 1, 1)
+//    иначе, если m = 0     вернуть ack (n - 1, 1)
 return Ackerman(num1-1,Ackerman(num1,num2 - 1));
-//    еще
-//      вернуть ack(n - 1, ack (n, m - 1))
+//    еще      вернуть ack(n - 1, ack (n, m - 1))
 }
 int num1 = Inputnum("Введите целое число M:");
 int num2 = Inputnum("Введите целое число N:");
